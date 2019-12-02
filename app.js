@@ -1,5 +1,6 @@
 const express = require('express');
 const mysql = require('mysql');
+const PORT = process.env.PORT || 5000;
 var bodyParser = require('body-parser');
 
 // Create connection
@@ -24,16 +25,8 @@ const app = express();
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended: false}));
 
-// ReCreate DB redirect index
-app.get('/createdb', (req, res) => {
-    let sql = 'source peralejo.sql';
-    db.query(sql, (err, result) => {
-        if(err) throw err;
-        else {
-            result.status(200).redirect('index.html');
-        }
-    });
-});
+app.set('view engine', 'html');
+app.get('/', (req, res) => res.render('/index'));
 
 // Get Table by Date + Room
 app.get('/getValuesByDR', (req, res) => {
@@ -357,6 +350,6 @@ app.post('/updateNames', (req, res) => {
 });
 
 // listen
-app.listen(80, () => {
-    console.log('Server started on port 3000');
+app.listen(PORT, () => {
+    console.log('Server started on port');
 });
