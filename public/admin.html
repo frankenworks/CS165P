@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src = jquery-3.4.1.js></script>
+</head>
+<body>
+    <a href = "./index.html"> Back to main </a>
+    <br><br>
+    Check Worker by Date: <input type="text" id = "WDate">  <input type="button" value="Check" onclick = "getWorkerByDate()">
+    <br>
+    <div id = "Editable"></div>
+    <br>
+    Insert/Update Worker for a Specific Date
+    <br>
+    Workers for past dates cannot be changed
+    <br><br>
+    <form action = "/updateWorker" method = "POST" onsubmit="return checkUpdate()">
+        Date: <input type = "text" name = "UpdateDate" required>
+        <br><br>
+        Worker Name: <input type = "text" name = "UpdateName" required>
+        <br><br>
+        <input type="submit" value = "Update">
+    </form>
+    <br><br>
+    Register/Update People to the registry
+    <br><br>
+    <form action = "/updateNames" method = "POST">
+        Name: <input type = "text" name = "PersonName" required>
+        <br><br>
+        E-mail: <input type = "text" name = "Email" required>
+        <br><br>
+        Tel No: <input type = "text" name = "TelNo" required>
+        <br><br>
+        <input type="submit" value = "Update">
+    </form>
+    <script src = functions.js></script>
+</body>
+</html>

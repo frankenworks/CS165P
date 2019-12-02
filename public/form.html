@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src = jquery-3.4.1.js></script>
+</head>
+<body>
+    <a href = "./index.html"> Back to main </a>
+    <br><br>
+    Date: <input type = "text" id = "DC"> YYYY-MM-DD eg. 2019-10-07
+    <br><br>
+    Room: 
+    <select name="RoomCheck" id="RC">
+        <option value="50m Competition Pool">50m Competition Pool</option>
+        <option value="25yd Instructional Pool">25yd Instructional Pool</option>
+        <option value="Administration Conference Room">Administration Conference Room</option>
+        <option value="Green Roof">Green Roof</option>
+        <option value="Lobby">Lobby</option>
+        <option value="Game Room">Game Room</option>
+        <option value="MAC Gymnasium">MAC Gymnasium</option>
+        <option value="Indoor Track">Indoor Track</option>
+        <option value="Basketball Court 1">Basketball Court #1</option>
+        <option value="Basketball Court 2">Basketball Court #2</option>
+        <option value="Racquetball Court 1">Racquetball Court #1</option>
+        <option value="Racquetball Court 2">Racquetball Court #2</option>
+        <option value="Squash Court 1">Squash Court #1</option>
+        <option value="Squash Court 2">Squash Court #2</option>
+        <option value="Studio 112">Studio 112</option>
+        <option value="Studio 158">Studio 158</option>
+        <option value="Studio 227A">Studio 227A</option>
+        <option value="Studio 229B">Studio 229B</option>
+    </select>
+    <br><br>
+    <input type="button" value="Check Schedule" onclick = "getValuesByDR()">
+    <br><br>
+    
+    <div id = "EdiTable"></div>
+
+    <br>
+    <div id = "testbuttons">
+        <button onclick = "TestValues1()">Test 1</button> 
+        <button onclick = "TestValues2()">Test 2</button> 
+        <button onclick = "TestValues3()">Test 3</button>
+        Values for Testing
+    </div> 
+    
+    <br><br>
+    <form action = "/requestForm" method = "POST" onsubmit = "revert()" id = "rform">
+        Name: <input type = "text" name = "PersonName" required>
+        <br><br>
+        e-mail: <input type = "text" name = "Email" required>
+        <br><br>
+        Room: 
+        <select name="RoomName" id="RN">
+            <option value="50m Competition Pool">50m Competition Pool</option>
+            <option value="25yd Instructional Pool">25yd Instructional Pool</option>
+            <option value="Administration Conference Room">Administration Conference Room</option>
+            <option value="Green Roof">Green Roof</option>
+            <option value="Lobby">Lobby</option>
+            <option value="Game Room">Game Room</option>
+            <option value="MAC Gymnasium">MAC Gymnasium</option>
+            <option value="Indoor Track">Indoor Track</option>
+            <option value="Basketball Court 1">Basketball Court #1</option>
+            <option value="Basketball Court 2">Basketball Court #2</option>
+            <option value="Racquetball Court 1">Racquetball Court #1</option>
+            <option value="Racquetball Court 2">Racquetball Court #2</option>
+            <option value="Squash Court 1">Squash Court #1</option>
+            <option value="Squash Court 2">Squash Court #2</option>
+            <option value="Studio 112">Studio 112</option>
+            <option value="Studio 158">Studio 158</option>
+            <option value="Studio 227A">Studio 227A</option>
+            <option value="Studio 229B">Studio 229B</option>
+        </select>
+        <br><br>
+        Setups Requested: <select name="Setups" id="Setup">
+            <option value="Lec"> Lecture Style</option>
+            <option value="Class"> Classroom Style</option>
+            <option value="Other"> Other</option>
+            <option value="NoSetup"> No Setup</option>
+        </select>
+        <br><br>
+        <textarea rows = "3" cols = "20" wrap = "physical" placeholder = "Enter Comments Here" name = "comments"></textarea>
+        <br><br>
+        Catering: <select name="Catering" id="Cat">
+            <option value="USC Catering"> USC Catering</option>
+            <option value="Aladdin Catering"> Aladdin Catering</option>
+            <option value="NoCatering"> No Catering</option>
+        </select>
+        <br><br>
+        Deposit: <input type = "text" name = "Deposit" required>
+        <br>
+        <p>Event Details:</p>
+        Activity Name: <input type = "text" name = "AN" required>
+        <br><br>
+        Date Choice: <input type = "text" name = "DC" required>
+        <br><br>
+        Time Setup Start: <input type = "text" name = "TimeSetStart" required>
+        <br><br>
+        Time Event Start: <input type = "text" name = "TimeEventStart" required>
+        <br><br>
+        Time Event End: <input type = "text" name = "TimeEventEnd" required>
+        <br><br>
+        Time Cleanup End: <input type = "text" name = "TimeSetEnd" required>
+        <br><br>
+        Estimated Attendance: <input type = "text" name = "Quantity" required>
+        <br><br>
+        Age of Attendants: <input type = "text" name = "Age" required>
+        <br><br>
+        <input type = "button" value = "Submit Here" onclick="checkConflict()">
+    </form>
+    <script src = functions.js></script>
+</body>
+</html>
