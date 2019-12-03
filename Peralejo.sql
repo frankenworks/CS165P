@@ -1,13 +1,3 @@
-#Peralejo, Kenji Francis I.
-#2012-24688
-
-#MySQL version 8.0
-
-#create database statements
-drop database if exists Peralejo;
-create database Peralejo;
-use Peralejo;
-
 #create table statements
 create table PersonalData (
 	name varchar(50),
