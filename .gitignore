@@ -1,0 +1,6 @@
+# Ignore Modules
+node_modules/
+
+# Ignore Installation PDF
+.PDF
+

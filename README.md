@@ -8,8 +8,3 @@ node v12.13.1
 
 sql used:
 xampp v3.2.4
-
-node modules installed
-express
-mysql
-body-parser
