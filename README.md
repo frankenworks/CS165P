@@ -1,5 +1,5 @@
 # CS165P
-CS165 Project  
+CS165 Project for Webpage backend
 Simple Node app for a Room Rental Form  
 Do not use as reference, not familiar with javascript when code was written
 
